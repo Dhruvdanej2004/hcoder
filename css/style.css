@@ -2,7 +2,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     margin: 50px auto;
-    width: 50%;
+    width: 90%;
+    max-width: 1200px; /* Set max-width for larger screens */
     text-align: center;
 }
 h2 {
@@ -45,6 +46,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 a {
     text-decoration: none;
@@ -90,4 +92,77 @@ a:hover {
 }
 .modal button.cancel {
     background-color: #FF6347;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+        padding: 20px;
+    }
+    form {
+        width: 100%;
+        margin: 20px 0;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .delete-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+        padding: 10px;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    .modal-content {
+        width: 90%;
+    }
+    input[type="file"] {
+        width: 100%;
+    }
+}
+
+/* For larger screens like desktop or laptop */
+@media (min-width: 1024px) {
+    body {
+        width: 80%;
+    }
+    form {
+        width: 60%;
+        margin: 30px auto;
+    }
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0;
+        margin: 20px 0;
+    }
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 15px;
+    }
+    .delete-btn {
+        width: auto;
+    }
 }
